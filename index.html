@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karan Singh, frontend developer</title>
+<meta name="description" content="Portfolio of Karan Singh, final-year B.Tech student at IIT Kanpur, for the Frontend Developer role at BlueStone.">
+<link rel="canonical" href="https://karan-mahan.github.io/">
+<meta property="og:url" content="https://karan-mahan.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Karan Singh, frontend developer">
+<meta property="og:description" content="Final-year B.Tech at IIT Kanpur. Portfolio for BlueStone's Frontend Developer role, with a live ring configurator and FINN Copilot.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233E9C'/%3E%3Cpath d='M7 13l4.5-5h9l4.5 5-9 11z' fill='%23fff'/%3E%3Cpath d='M7 13h18M11.5 8L16 24M20.5 8L16 24' stroke='%23233E9C' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#ECEEF1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1526" media="(prefers-color-scheme: dark)">
+<script>
+  // Apply a saved theme before first paint so the page never flashes the wrong colours.
+  try {
+    var savedTheme = localStorage.getItem("ks-theme");
+    if (savedTheme === "dark" || savedTheme === "light") document.documentElement.setAttribute("data-theme", savedTheme);
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    color-scheme: light;
+    --bg: #ECEEF1;
+    --surface: #F9FAFB;
+    --field: #FFFFFF;
+    --ink: #15171C;
+    --muted: #535B6A;
+    --rule: #CBD0D8;
+    --rule-strong: #15171C;
+    --accent: #233E9C;
+    --accent-strong: #182C73;
+    --accent-wash: #E1E6F5;
+    --on-accent: #FFFFFF;
+    --stage-a: #FFFFFF;
+    --stage-b: #E9EDF3;
+    --ring-edge: rgba(21, 23, 28, .16);
+    --ring-shadow: rgba(21, 23, 28, .08);
+    --card-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 30px 60px -36px rgba(24, 44, 115, .45), 0 2px 6px -2px rgba(21, 23, 28, .08);
+    --heart: #B4364C;
+    --heart-wash: #FDF3F5;
+    --heart-rule: #E4B9C1;
+    --code-bg: #1A1D24;
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2315171C' stroke-width='1.6'/%3E%3C/svg%3E");
+    --serif: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+    --sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0F1526;
+    --surface: #161E33;
+    --field: #1C2540;
+    --ink: #E8EBF2;
+    --muted: #A4ADC0;
+    --rule: #2E3955;
+    --rule-strong: #C9D0DE;
+    --accent: #9DB2FF;
+    --accent-strong: #C3D0FF;
+    --accent-wash: #212D5A;
+    --on-accent: #0F1526;
+    --stage-a: #2B3656;
+    --stage-b: #161E33;
+    --ring-edge: rgba(0, 0, 0, .45);
+    --ring-shadow: rgba(0, 0, 0, .4);
+    --card-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 30px 60px -28px rgba(0, 0, 0, .75);
+    --heart: #FF8FA3;
+    --heart-wash: #3A1E2C;
+    --heart-rule: #6E3244;
+    --code-bg: #0A0F1C;
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23E8EBF2' stroke-width='1.6'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0F1526;
+      --surface: #161E33;
+      --field: #1C2540;
+      --ink: #E8EBF2;
+      --muted: #A4ADC0;
+      --rule: #2E3955;
+      --rule-strong: #C9D0DE;
+      --accent: #9DB2FF;
+      --accent-strong: #C3D0FF;
+      --accent-wash: #212D5A;
+      --on-accent: #0F1526;
+      --stage-a: #2B3656;
+      --stage-b: #161E33;
+      --ring-edge: rgba(0, 0, 0, .45);
+      --ring-shadow: rgba(0, 0, 0, .4);
+      --card-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 30px 60px -28px rgba(0, 0, 0, .75);
+      --heart: #FF8FA3;
+      --heart-wash: #3A1E2C;
+      --heart-rule: #6E3244;
+      --code-bg: #0A0F1C;
+      --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23E8EBF2' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+  }
+
+  /* ---------- Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    transition: background-color .3s ease, color .3s ease;
+  }
+  svg { display: block; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  p { margin: 0; }
+  h1, h2, h3, h4 { margin: 0; font-weight: 500; }
+  code { font-family: var(--mono); }
+
+  .wrap { max-width: 1120px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .skip {
+    position: absolute; left: 12px; top: -64px; z-index: 30;
+    background: var(--accent); color: var(--on-accent);
+    padding: 10px 16px; border-radius: 10px; font-weight: 600; text-decoration: none;
+  }
+  .skip:focus { top: 12px; color: var(--on-accent); }
+
+  .link-btn {
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--accent);
+    background: none; border: 0; padding: 0; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+  }
+  .link-btn:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+
+  /* ---------- Header ---------- */
+  .top {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .top-inner { display: flex; align-items: center; gap: 22px; height: 62px; }
+  .mark { margin-right: auto; font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .mark:hover { color: var(--ink); }
+  .top nav { display: flex; gap: 22px; font-size: 15px; }
+  .top nav a { color: var(--muted); text-decoration: none; padding: 4px 0; border-bottom: 1.5px solid transparent; }
+  .top nav a:hover, .top nav a[aria-current] { color: var(--ink); border-bottom-color: var(--ink); }
+  .theme-btn {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--rule); background: var(--field); color: var(--ink);
+    display: grid; place-items: center; cursor: pointer;
+  }
+  .theme-btn:hover { border-color: var(--muted); }
+  .theme-btn svg { width: 18px; height: 18px; }
+  .theme-btn .i-sun { display: none; }
+  .theme-btn[data-mode="dark"] .i-sun { display: block; }
+  .theme-btn[data-mode="dark"] .i-moon { display: none; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 56px;
+    align-items: start;
+    padding-top: 64px;
+    padding-bottom: 88px;
+  }
+  .hero-text { padding-top: 40px; }
+  .name {
+    font-family: var(--serif);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(58px, 8.6vw, 112px);
+    line-height: .93;
+    letter-spacing: -0.015em;
+  }
+  .name span { display: block; }
+  .role { margin-top: 28px; font-size: 21px; line-height: 1.4; font-weight: 500; max-width: 30ch; }
+  .lede { margin-top: 16px; color: var(--muted); max-width: 52ch; }
+  .cta-row { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; font-size: 16px; }
+  .cta-row a { font-weight: 500; }
+  .cta-row .btn-link {
+    display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px;
+    border-radius: 12px; background: var(--accent); color: var(--on-accent);
+    font-weight: 600; text-decoration: none;
+  }
+  .cta-row .btn-link:hover { background: var(--accent-strong); color: var(--on-accent); }
+  .creds { margin: 44px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); }
+  .creds div { padding: 14px 18px 0 0; }
+  .creds dt { font-size: 14px; color: var(--muted); }
+  .creds dd { margin: 2px 0 0; font-weight: 600; line-height: 1.35; }
+
+  /* ---------- Ring card ---------- */
+  .piece { margin: 0; justify-self: end; width: 100%; max-width: 440px; scroll-margin-top: 80px; }
+  .card { background: var(--surface); border-radius: 18px; padding: 22px 24px 24px; box-shadow: var(--card-shadow); }
+  .card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .card-title { font-family: var(--serif); font-size: 26px; line-height: 1.15; font-weight: 500; }
+  .card-title:focus { outline: none; }
+  .card-title:focus-visible { outline: 2px solid var(--accent); }
+  .bag-toggle {
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap;
+    min-height: 36px; padding: 0 12px; border-radius: 999px;
+    border: 1px solid var(--rule); background: var(--field); cursor: pointer;
+  }
+  .bag-toggle:hover { border-color: var(--muted); }
+  .bag-toggle strong { font-variant-numeric: tabular-nums; display: inline-block; margin-left: 2px; }
+  .bump { animation: bump .45s cubic-bezier(.3, 1.6, .5, 1); }
+  @keyframes bump { 0% { transform: scale(1); } 40% { transform: scale(1.45); } 100% { transform: scale(1); } }
+
+  .ring-stage {
+    margin: 12px -8px 6px;
+    background: radial-gradient(120% 90% at 50% 20%, var(--stage-a) 0%, var(--stage-b) 72%);
+    border-radius: 12px;
+  }
+  .ring { width: 100%; max-width: 330px; height: auto; margin: 0 auto; }
+  .ring stop { transition: stop-color .45s ease; }
+  .ring-shadow { fill: var(--ring-shadow); }
+  .ring-edge { stroke: var(--ring-edge); }
+  .engrave { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: .08em; transition: fill .45s ease; }
+  .stone-scale { transform-box: fill-box; transform-origin: 50% 80%; transition: transform .4s cubic-bezier(.2, .75, .2, 1); }
+  .drop { animation: drop .9s cubic-bezier(.2, .8, .2, 1) .25s both; }
+  .glint { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  .glint.play { animation: glint 1.2s ease-out .15s both; }
+  .glint.play.first { animation-delay: 1.05s; }
+  @keyframes drop { from { transform: translateY(-26px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes glint {
+    0% { opacity: 0; transform: scale(.3) rotate(0deg); }
+    35% { opacity: 1; transform: scale(1) rotate(30deg); }
+    100% { opacity: 0; transform: scale(.6) rotate(60deg); }
+  }
+
+  .price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 12px; flex-wrap: wrap; }
+  .price { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .price-note { font-size: 14px; color: var(--muted); }
+
+  .opts { border: 0; margin: 18px 0 0; padding: 0; min-width: 0; }
+  .opts legend { padding: 0; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .opts legend span { font-weight: 400; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: pointer; }
+  .chip span {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 38px; padding: 6px 14px;
+    border: 1px solid var(--rule); border-radius: 999px;
+    background: var(--field); font-size: 15px; line-height: 1.2;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .chip input:hover + span { border-color: var(--muted); }
+  .chip input:checked + span { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink) inset; }
+  .chip input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .swatch { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(21, 23, 28, .18) inset; }
+  .swatch.yg { background: linear-gradient(135deg, #f1d27a, #b88a2e); }
+  .swatch.rg { background: linear-gradient(135deg, #f3c3b3, #b97a6a); }
+  .swatch.pt { background: linear-gradient(135deg, #f4f6f9, #9aa1ab); }
+
+  .size-field { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .size-field label { font-size: 14px; font-weight: 600; }
+  .size-field select {
+    font: inherit; font-size: 15px; color: var(--ink);
+    min-height: 40px; padding: 6px 36px 6px 12px;
+    border: 1px solid var(--rule); border-radius: 10px; background-color: var(--field);
+    appearance: none; -webkit-appearance: none;
+    background-image: var(--select-arrow); background-repeat: no-repeat; background-position: right 12px center;
+    cursor: pointer;
+  }
+  .engrave-field { margin-top: 18px; }
+  .engrave-field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .engrave-field label span { font-weight: 400; color: var(--muted); }
+  .engrave-field input {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+    min-height: 44px; padding: 8px 12px;
+    border: 1px solid var(--rule); border-radius: 10px; background: var(--field);
+  }
+  .engrave-field input::placeholder { color: var(--muted); opacity: .75; }
+  .engrave-field input:hover { border-color: var(--muted); }
+  .hint { margin-top: 6px; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--muted); }
+  .hint span:last-child { font-variant-numeric: tabular-nums; }
+
+  .actions { margin-top: 20px; display: flex; gap: 10px; }
+  .btn {
+    font: inherit; font-weight: 600; font-size: 16px; cursor: pointer;
+    min-height: 48px; border-radius: 12px; border: 1px solid transparent;
+  }
+  .btn-primary { flex: 1; background: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: var(--accent-strong); }
+  .btn-primary:active { transform: translateY(1px); }
+  .btn-icon { width: 48px; background: var(--field); border-color: var(--rule); display: grid; place-items: center; color: var(--ink); }
+  .btn-icon:hover { border-color: var(--muted); }
+  .btn-icon svg { width: 22px; height: 22px; }
+  .btn-icon .heart { fill: transparent; stroke: currentColor; stroke-width: 1.7; transition: fill .2s ease; }
+  .btn-icon[aria-pressed="true"] { color: var(--heart); border-color: var(--heart-rule); background: var(--heart-wash); }
+  .btn-icon[aria-pressed="true"] .heart { fill: currentColor; }
+
+  .status { min-height: 22px; margin-top: 10px; font-size: 14px; color: var(--muted); }
+
+  .breakdown { margin-top: 6px; border-top: 1px solid var(--rule); padding-top: 12px; font-size: 15px; }
+  .breakdown summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+  .breakdown table { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
+  .breakdown td { padding: 4px 0; }
+  .breakdown td:last-child { text-align: right; }
+  .breakdown tr.total td { border-top: 1px solid var(--rule); padding-top: 8px; font-weight: 600; }
+
+  /* Bag view */
+  .bag-list { list-style: none; margin: 10px 0 0; padding: 0; }
+  .bag-item {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 2px 12px;
+    padding: 16px 0; border-bottom: 1px solid var(--rule);
+  }
+  .bag-thumb { grid-row: span 2; width: 44px; height: 44px; border-radius: 12px; background: radial-gradient(circle at 50% 40%, var(--stage-a), var(--stage-b)); position: relative; }
+  .bag-thumb::after {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 24px; height: 24px; margin: -12px 0 0 -12px;
+    border-radius: 50%; background: var(--metal);
+    -webkit-mask: radial-gradient(circle, transparent 7.5px, #000 8px);
+    mask: radial-gradient(circle, transparent 7.5px, #000 8px);
+  }
+  .bag-thumb.yg { --metal: linear-gradient(135deg, #f1d27a, #9c7426); }
+  .bag-thumb.rg { --metal: linear-gradient(135deg, #f3c3b3, #a7685a); }
+  .bag-thumb.pt { --metal: linear-gradient(135deg, #f4f6f9, #8a919b); }
+  .bag-name { font-weight: 600; line-height: 1.3; }
+  .bag-meta, .bag-engr { font-size: 14px; color: var(--muted); line-height: 1.4; }
+  .bag-engr { font-style: italic; }
+  .bag-price { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+  .bag-controls { grid-column: 2 / -1; margin-top: 10px; display: flex; align-items: center; gap: 18px; }
+  .qty { display: inline-flex; align-items: center; border: 1px solid var(--rule); border-radius: 10px; background: var(--field); }
+  .qty button { width: 38px; height: 36px; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 18px; line-height: 1; cursor: pointer; border-radius: 9px; }
+  .qty button:disabled { color: var(--muted); opacity: .4; cursor: not-allowed; }
+  .qty output { min-width: 24px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .bag-sum { padding-top: 16px; }
+  .bag-total { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; font-size: 19px; font-variant-numeric: tabular-nums; }
+  .bag-sum .price-note { margin-top: 2px; }
+  .bag-sum .btn-primary { width: 100%; margin-top: 18px; }
+  .bag-empty { padding: 36px 0 20px; }
+  .bag-empty p { color: var(--muted); max-width: 32ch; }
+  .bag-empty .btn { margin-top: 18px; padding: 0 20px; background: var(--field); border-color: var(--rule); color: var(--ink); }
+  .bag-empty .btn:hover { border-color: var(--muted); }
+
+  .piece-caption { margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+  /* Store inspector */
+  .log {
+    margin-top: 12px; padding: 16px; border-radius: 14px;
+    background: var(--code-bg); color: #E6E9EF; border: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .log-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+  .log-tools button {
+    font: 600 13px var(--sans); color: #E6E9EF; background: #272C38;
+    border: 1px solid #3B4253; border-radius: 8px; min-height: 34px; padding: 0 12px; cursor: pointer;
+  }
+  .log-tools button:hover:not(:disabled) { background: #313848; }
+  .log-tools button:disabled { opacity: .4; cursor: not-allowed; }
+  .travel { flex: 1 1 160px; display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .travel label { font: 600 13px var(--sans); color: #AEB6C6; white-space: nowrap; }
+  .travel input { flex: 1; min-width: 0; accent-color: #9FB4FF; }
+  .log-step { margin-top: 10px; font-family: var(--mono); font-size: 12.5px; color: #9FB4FF; }
+  .log h4 { margin: 14px 0 6px; font: 600 13px var(--sans); color: #AEB6C6; }
+  .log pre {
+    margin: 0; font-family: var(--mono); font-size: 12.5px; line-height: 1.6; white-space: pre;
+    max-height: 200px; overflow: auto; padding-right: 6px;
+  }
+  .steps { list-style: none; margin: 0; padding: 0; max-height: 180px; overflow: auto; }
+  .steps button {
+    display: block; width: 100%; text-align: left; cursor: pointer;
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.5; color: #E6E9EF;
+    background: none; border: 0; border-radius: 6px; padding: 3px 8px;
+  }
+  .steps button:hover { background: #262B36; }
+  .steps button[aria-current="step"] { background: #283253; box-shadow: inset 2px 0 0 #9FB4FF; }
+  .steps button.future { color: #7D869A; }
+  .steps .t { color: #9FB4FF; }
+  .steps .future .t { color: inherit; }
+
+  /* ---------- Sections ---------- */
+  .section { padding-top: 96px; scroll-margin-top: 62px; }
+  .sec-head {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 56px; align-items: end;
+    padding-bottom: 28px; border-bottom: 1px solid var(--rule-strong);
+  }
+  .sec-head h2 { font-family: var(--serif); font-size: clamp(34px, 4.6vw, 52px); line-height: 1.04; letter-spacing: -0.01em; }
+  .sec-head p { color: var(--muted); max-width: 50ch; }
+
+  /* Why BlueStone */
+  .why { padding-top: 8px; scroll-margin-top: 62px; }
+  .why-inner {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px 56px;
+    padding: 40px 0 44px; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule);
+  }
+  .why h2 { font-family: var(--serif); font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; }
+  .why-copy p { max-width: 62ch; }
+  .why-copy p + p { margin-top: 14px; }
+
+  /* Role fit */
+  .fit { margin: 0; }
+  .fit-row {
+    display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: 8px 56px;
+    padding: 20px 0; border-bottom: 1px solid var(--rule);
+  }
+  .fit-row dt { font-weight: 600; }
+  .fit-row dd { margin: 0; max-width: 64ch; }
+  .fit-row dd .where { font-weight: 600; }
+  .tag {
+    display: inline-block; margin-left: 10px; vertical-align: 2px;
+    font-size: 12px; font-weight: 600; color: var(--accent-strong);
+    background: var(--accent-wash); padding: 2px 8px; border-radius: 999px;
+  }
+
+  /* Featured project */
+  .feature {
+    display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px 64px;
+    padding: 40px 0 44px; border-bottom: 1px solid var(--rule); scroll-margin-top: 62px;
+  }
+  .feature h3 { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 48px); line-height: 1.05; }
+  .feature-sub { margin-top: 10px; font-size: 19px; font-weight: 500; }
+  .feature-main .body { margin-top: 20px; max-width: 62ch; }
+  .feature-links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 28px; font-weight: 600; }
+  .facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); }
+  .facts div { padding: 14px 16px 16px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+  .facts dd { margin: 0; font-family: var(--serif); font-size: 34px; line-height: 1.1; font-weight: 500; }
+  .facts dt { margin-top: 4px; font-size: 14px; color: var(--muted); line-height: 1.35; }
+  .stack-title { margin-top: 24px; font-size: 14px; font-weight: 600; }
+  .tags { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li { font-size: 14px; padding: 4px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--rule); }
+
+  /* Architecture explorer */
+  .arch { grid-column: 1 / -1; padding: 28px; border-radius: 18px; background: var(--surface); box-shadow: var(--card-shadow); }
+  .arch-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+  .arch-head h4 { font-family: var(--serif); font-size: 28px; line-height: 1.15; }
+  .seg { display: inline-flex; padding: 4px; border-radius: 12px; background: var(--bg); border: 1px solid var(--rule); }
+  .seg button {
+    font: inherit; font-size: 14px; font-weight: 600; min-height: 38px; padding: 0 14px;
+    border-radius: 9px; border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .seg button:hover { color: var(--ink); }
+  .seg button[aria-pressed="true"] { background: var(--field); color: var(--ink); box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 0 0 1px var(--rule); }
+  .arch-note { margin-top: 12px; color: var(--muted); max-width: 66ch; }
+  .layers { margin-top: 24px; display: grid; gap: 22px; }
+  .layer { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; position: relative; }
+  .layer.split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .layer + .layer::before {
+    content: ""; position: absolute; left: 50%; top: -22px; width: 1px; height: 22px;
+    background: var(--rule-strong); opacity: .45;
+  }
+  .mod {
+    border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; background: var(--field);
+    transition: opacity .25s ease, border-color .25s ease, background-color .25s ease;
+  }
+  .mod code { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+  .mod code + code { margin-top: 2px; }
+  .mod p { margin-top: 4px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+  .mod .who { margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
+  .arch[data-build="pages"] .mod[data-in~="pages"],
+  .arch[data-build="server"] .mod[data-in~="server"] { border-color: var(--accent); background: var(--accent-wash); }
+  .arch[data-build="pages"] .mod:not([data-in~="pages"]),
+  .arch[data-build="server"] .mod:not([data-in~="server"]) { opacity: .45; border-style: dashed; background: transparent; }
+  .arch-foot { margin-top: 22px; font-size: 15px; color: var(--muted); max-width: 70ch; }
+
+  /* Dated lists */
+  .dated { list-style: none; margin: 0; padding: 0; }
+  .dated > li {
+    display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 6px 40px;
+    padding: 28px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 62px;
+  }
+  .when { font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
+  .dated h3 { font-size: 20px; font-weight: 600; line-height: 1.3; }
+  .ctx { margin-top: 4px; font-size: 15px; color: var(--muted); }
+  .dated .desc { margin-top: 12px; max-width: 66ch; }
+  .dated .item-link { margin-top: 12px; font-size: 15px; font-weight: 600; }
+  .more { padding-top: 20px; color: var(--muted); font-size: 15px; }
+
+  /* Skills and education */
+  .two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 64px; }
+  .two-col h2 { font-family: var(--serif); font-size: clamp(30px, 3.4vw, 38px); padding-bottom: 12px; border-bottom: 1px solid var(--rule-strong); }
+  .two-col > div + div h2 { margin-top: 0; }
+  .kv { margin: 0; }
+  .kv div { padding: 14px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 4px 20px; }
+  .kv dt { font-weight: 600; font-size: 15px; padding-top: 1px; }
+  .kv dd { margin: 0; }
+  .kv dd small { display: block; color: var(--muted); font-size: 15px; }
+  .courses { margin-top: 18px; font-size: 15px; color: var(--muted); max-width: 60ch; }
+
+  /* Contact */
+  .contact { padding-bottom: 80px; }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 56px; padding-top: 32px; align-items: start; }
+  .big-mail { font-family: var(--serif); font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15; overflow-wrap: anywhere; }
+  .big-mail a { color: var(--ink); text-decoration-color: var(--accent); }
+  .copy-row { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 14px; color: var(--muted); }
+  .btn-quiet {
+    font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+    padding: 8px 16px; min-height: 40px; border-radius: 10px;
+    background: var(--field); border: 1px solid var(--rule); color: var(--ink);
+  }
+  .btn-quiet:hover { border-color: var(--muted); }
+  .elsewhere { list-style: none; margin: 0; padding: 0; }
+  .elsewhere li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .elsewhere li:first-child { border-top: 1px solid var(--rule); }
+  .elsewhere span { color: var(--muted); font-size: 15px; }
+  .foot { border-top: 1px solid var(--rule); padding: 20px 0 36px; font-size: 14px; color: var(--muted); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 44px; padding-bottom: 64px; }
+    .hero-text { padding-top: 0; }
+    .piece { justify-self: start; max-width: 520px; }
+    .sec-head, .feature, .two-col, .contact-grid, .why-inner { grid-template-columns: 1fr; }
+    .sec-head { gap: 14px; }
+    .two-col { gap: 56px; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .wrap { padding-left: 18px; padding-right: 18px; }
+    .top-inner { gap: 14px; height: 58px; }
+    .top nav { gap: 16px; font-size: 14px; }
+    .top nav .nav-wide { display: none; }
+    .role { font-size: 19px; }
+    .creds { grid-template-columns: 1fr; border-top: 0; margin-top: 36px; }
+    .creds div { padding: 12px 0; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 16px; }
+    .creds div:last-child { border-bottom: 1px solid var(--rule); }
+    .creds dd { margin: 0; text-align: right; }
+    .card { padding: 18px 16px 20px; border-radius: 16px; }
+    .price { font-size: 26px; }
+    .fit-row { grid-template-columns: 1fr; padding: 18px 0; }
+    .dated > li { grid-template-columns: 1fr; padding: 24px 0; }
+    .section { padding-top: 68px; }
+    .kv div { grid-template-columns: 1fr; }
+    .arch { padding: 20px 16px; margin: 0 -4px; }
+    .layer.split { grid-template-columns: 1fr; }
+    .seg { width: 100%; }
+    .seg button { flex: 1; padding: 0 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .glint { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="mark" href="#main">Karan Singh</a>
+    <nav aria-label="Sections">
+      <a href="#fit">Role fit</a>
+      <a class="nav-wide" href="#projects">Projects</a>
+      <a class="nav-wide" href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- Intro -->
+  <section class="hero wrap" id="intro" aria-labelledby="hero-name">
+    <div class="hero-text">
+      <h1 class="name" id="hero-name"><span>Karan</span><span>Singh</span></h1>
+      <p class="role">Frontend developer and final-year B.Tech student at IIT Kanpur</p>
+      <p class="lede">I build interfaces that hold up when people look closely: typed React components, state you can trace, and layouts that start on a phone. This page goes with my application for the Frontend Developer role at BlueStone in Bengaluru.</p>
+      <div class="cta-row">
+        <a class="btn-link" href="https://karan-mahan.github.io/finn-copilot/">Open FINN Copilot</a>
+        <a href="https://github.com/Karan-Mahan">GitHub</a>
+        <a href="https://www.linkedin.com/in/karan-singh-222436295/">LinkedIn</a>
+        <a href="mailto:karansingh23@iitk.ac.in">karansingh23@iitk.ac.in</a>
+      </div>
+      <dl class="creds">
+        <div><dt>IIT Kanpur</dt><dd>B.Tech, CPI 8.1</dd></div>
+        <div><dt>Codeforces</dt><dd>Rating 1720</dd></div>
+        <div><dt>Live project</dt><dd>FINN Copilot, 34 tests</dd></div>
+      </dl>
+    </div>
+
+    <figure class="piece" id="ring">
+      <div class="card">
+        <div class="card-head">
+          <p class="card-title" id="cardTitle" tabindex="-1">Facet solitaire ring</p>
+          <button class="bag-toggle" id="bagToggle" type="button" aria-expanded="false" aria-controls="bagView">Bag <strong>0</strong></button>
+        </div>
+
+        <!-- Configure view -->
+        <div id="configureView">
+          <div class="ring-stage">
+            <svg class="ring" viewBox="0 26 260 186" role="img" aria-labelledby="ringTitle">
+              <title id="ringTitle">Ring preview</title>
+              <defs>
+                <linearGradient id="metalGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop id="m0" offset="0" stop-color="#7d5a1c"/>
+                  <stop id="m1" offset=".46" stop-color="#f1d27a"/>
+                  <stop id="m2" offset="1" stop-color="#b88a2e"/>
+                </linearGradient>
+                <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#e3e8f3"/>
+                </linearGradient>
+                <linearGradient id="pavGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f3f6fb"/>
+                  <stop offset=".5" stop-color="#cfd8ea"/>
+                  <stop offset="1" stop-color="#eef2f9"/>
+                </linearGradient>
+                <path id="engravePath" d="M68 140 A62 40 0 0 1 192 140"/>
+              </defs>
+              <ellipse class="ring-shadow" cx="130" cy="202" rx="74" ry="6"/>
+              <ellipse class="ring-edge" cx="130" cy="140" rx="84" ry="62" fill="none" stroke-width="1"/>
+              <ellipse cx="130" cy="140" rx="78" ry="56" fill="none" stroke="url(#metalGrad)" stroke-width="12"/>
+              <ellipse cx="130" cy="140" rx="72.5" ry="50.5" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.2"/>
+              <text class="engrave" id="engraveText" font-size="9" text-anchor="middle"><textPath href="#engravePath" startOffset="50%" id="engraveTP"></textPath></text>
+              <path d="M110 86 L119 72 L141 72 L150 86" fill="none" stroke="url(#metalGrad)" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <g class="drop">
+                <g class="stone-scale" id="stoneScale">
+                  <polygon points="102,64 158,64 130,90" fill="url(#pavGrad)" stroke="#b4c0d8" stroke-width=".8" stroke-linejoin="round"/>
+                  <path d="M116 64 L130 90 L144 64 M130 64 L130 90" stroke="#bcc7dd" stroke-width=".7" fill="none"/>
+                  <polygon points="102,64 115,50 145,50 158,64" fill="url(#crownGrad)" stroke="#b4c0d8" stroke-width=".8" stroke-linejoin="round"/>
+                  <path d="M115 50 L109 64 M115 50 L123 64 M130 50 L123 64 M130 50 L137 64 M145 50 L137 64 M145 50 L151 64" stroke="#c5cfe3" stroke-width=".7" fill="none"/>
+                  <path d="M108 78 L104 61 M152 78 L156 61" stroke="url(#metalGrad)" stroke-width="3" stroke-linecap="round"/>
+                </g>
+              </g>
+              <path class="glint play first" id="glint" d="M152 34 L154 42 L162 44 L154 46 L152 54 L150 46 L142 44 L150 42 Z" fill="#ffffff" stroke="#c9d3ea" stroke-width=".6"/>
+            </svg>
+          </div>
+
+          <div class="price-row">
+            <p class="price" id="price" aria-live="polite">₹0</p>
+            <p class="price-note" id="priceNote">Incl. 3% GST</p>
+          </div>
+
+          <fieldset class="opts">
+            <legend>Metal <span id="metalName"></span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="metal" value="yg" checked><span><i class="swatch yg" aria-hidden="true"></i>Yellow gold</span></label>
+              <label class="chip"><input type="radio" name="metal" value="rg"><span><i class="swatch rg" aria-hidden="true"></i>Rose gold</span></label>
+              <label class="chip"><input type="radio" name="metal" value="pt"><span><i class="swatch pt" aria-hidden="true"></i>Platinum</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="opts">
+            <legend>Diamond</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="carat" value="0.25"><span>0.25 ct</span></label>
+              <label class="chip"><input type="radio" name="carat" value="0.50" checked><span>0.50 ct</span></label>
+              <label class="chip"><input type="radio" name="carat" value="0.75"><span>0.75 ct</span></label>
+            </div>
+          </fieldset>
+
+          <div class="size-field">
+            <label for="size">Ring size</label>
+            <select id="size"></select>
+          </div>
+
+          <div class="engrave-field">
+            <label for="engraving">Engraving <span>(optional, +₹500)</span></label>
+            <input id="engraving" type="text" maxlength="14" autocomplete="off" spellcheck="false" placeholder="Initials or a date" aria-describedby="engraveHint">
+            <p class="hint" id="engraveHint"><span>Previewed inside the band</span><span id="engraveCount">0/14</span></p>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="addToBag" type="button">Add to bag</button>
+            <button class="btn btn-icon" id="wishlist" type="button" aria-pressed="false" aria-label="Save to wishlist">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="heart" d="M12 20.3s-7.6-4.6-9.2-9.4C1.7 7.6 3.9 4.6 7.1 4.6c2 0 3.6 1.1 4.9 2.9 1.3-1.8 2.9-2.9 4.9-2.9 3.2 0 5.4 3 4.3 6.3-1.6 4.8-9.2 9.4-9.2 9.4z"/></svg>
+            </button>
+          </div>
+          <p class="status" id="status" role="status"></p>
+
+          <details class="breakdown">
+            <summary>Price breakdown</summary>
+            <table>
+              <tbody id="breakdownBody"></tbody>
+            </table>
+          </details>
+        </div>
+
+        <!-- Bag view -->
+        <div id="bagView" hidden>
+          <ul class="bag-list" id="bagList"></ul>
+          <div class="bag-empty" id="bagEmpty">
+            <p>Your bag is empty. Choose a metal, diamond and size, then add the ring to see it here.</p>
+            <button class="btn" id="backToRing" type="button">Choose a ring</button>
+          </div>
+          <div class="bag-sum" id="bagSum">
+            <p class="bag-total"><span>Total</span><span id="bagTotal">₹0</span></p>
+            <p class="price-note">Prices include 3% GST.</p>
+            <button class="btn btn-primary" id="checkout" type="button">Check out</button>
+            <p class="status" id="bagStatus" role="status"></p>
+          </div>
+        </div>
+      </div>
+
+      <figcaption class="piece-caption">
+        A demo product card with sample prices. It runs on a small Redux-style store in plain JavaScript: every change dispatches an action, a reducer returns the next state, and the card re-renders from it. Your bag stays saved in this browser.
+        <button class="link-btn" id="logToggle" type="button" aria-expanded="false" aria-controls="log">Open the store</button>
+      </figcaption>
+      <div class="log" id="log" hidden>
+        <div class="log-tools">
+          <button id="undoBtn" type="button">Undo</button>
+          <button id="redoBtn" type="button">Redo</button>
+          <div class="travel">
+            <label for="travel">Time travel</label>
+            <input id="travel" type="range" min="0" max="0" value="0" step="1">
+          </div>
+        </div>
+        <p class="log-step" id="logStep"></p>
+        <h4>State at this step</h4>
+        <pre id="stateOut"></pre>
+        <h4>Actions, newest first</h4>
+        <ol class="steps" id="steps"></ol>
+      </div>
+    </figure>
+  </section>
+
+  <!-- Why BlueStone -->
+  <section class="why wrap" id="why" aria-labelledby="why-title">
+    <div class="why-inner">
+      <h2 id="why-title">Why BlueStone</h2>
+      <div class="why-copy">
+        <p>BlueStone started in 2011 as an online-only jeweller and still lets customers begin, and even customise, a purchase on its website. That puts real weight on the product page: metal, purity and size each change the price, and people look closely before they spend.</p>
+        <p>That is the frontend work I want to do, where small details decide whether someone trusts what they see. The ring card above is my first pass at it, built the way I would approach a real product page: one source of truth, prices derived instead of stored, and every change traceable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role fit -->
+  <section class="section wrap" id="fit" aria-labelledby="fit-title">
+    <div class="sec-head">
+      <h2 id="fit-title">BlueStone’s brief, matched to my work</h2>
+      <p>Each requirement from the Frontend Developer job description, next to the place in my work where you can check it.</p>
+    </div>
+    <dl class="fit">
+      <div class="fit-row">
+        <dt>HTML5, CSS3 and JavaScript</dt>
+        <dd><span class="where">This page.</span> Hand-written HTML, CSS and modern JavaScript in one file with no framework: semantic landmarks, native form controls, a light and dark theme, and a layout that holds from a 320&nbsp;px phone to a wide monitor.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>React.js components</dt>
+        <dd><a class="where" href="#finn">FINN Copilot.</a> A React and TypeScript interface built with Vite, covering the conversation view, source inspector, browser persistence and Markdown export.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Redux and state management</dt>
+        <dd><a class="where" href="#ring">The ring card.</a> A Redux-style store with actions, a pure reducer and selectors for price and bag totals, wrapped in a higher-order reducer that records history for undo, redo and time travel. In FINN Copilot, up to 20 conversations persist in the browser.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Node.js and backend APIs</dt>
+        <dd><a class="where" href="#arch">FINN Copilot’s server edition.</a> A chat API route that validates input and orchestrates server-only research: live company discovery, PDF extraction and optional Gemini synthesis. The project runs on Node 22 and pnpm.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Responsive, cross-browser UI</dt>
+        <dd><span class="where">FINN Copilot</span> ships as a static GitHub Pages build that runs entirely in the visitor’s browser. This page reflows from two columns to one, scales type fluidly, and respects reduced-motion and colour-scheme settings.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Code reviews, testing and debugging</dt>
+        <dd><span class="where">34 tests in FINN Copilot</span> cover calculations, intent routing, source isolation, input safety and parity between the browser and server builds. GitHub Actions runs the tests and type checks before every Pages deploy.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Working with designers</dt>
+        <dd><a class="where" href="#speech">Speech-to-text app for DES646,</a> a design course: a Gradio interface with live microphone input, feature toggles and real-time transcription feedback, deployed on Hugging Face Spaces.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Internship in UI development <span class="tag">Still building</span></dt>
+        <dd>My internship at Futures First was an analyst role, not a UI one. I still shipped two interactive tools there: a macroeconomic dashboard covering 1986–2026 and a tool that scrapes central-bank statements and highlights what changed between them.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Problem solving</dt>
+        <dd><span class="where">Codeforces rating of 1720</span> after three years of regular contests.</dd>
+      </div>
+      <div class="fit-row">
+        <dt>Communication and teamwork</dt>
+        <dd>As Aeromodelling Club secretary I ran a workshop for more than 50 first-year students, and I was selected from over 200 applicants to represent IIT Kanpur at IIT Bombay’s Techfest.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- Projects -->
+  <section class="section wrap" id="projects" aria-labelledby="projects-title">
+    <div class="sec-head">
+      <h2 id="projects-title">Projects</h2>
+      <p>One frontend project in depth, then the machine-learning and signal-processing work from my coursework.</p>
+    </div>
+
+    <article class="feature" id="finn" aria-labelledby="finn-title">
+      <div class="feature-main">
+        <h3 id="finn-title">FINN Copilot</h3>
+        <p class="feature-sub">A chat-first research tool for investment portfolios</p>
+        <p class="body">Instead of another dashboard, FINN Copilot answers questions about a portfolio in conversation: briefings on new filings, price and volume alerts, side-by-side company comparisons, and answers that cite the exact page of the source document. A source inspector shows each document’s link and retrieval date, and useful answers can be pinned to a notebook and exported as Markdown.</p>
+        <p class="feature-links">
+          <a href="https://karan-mahan.github.io/finn-copilot/">Open the live app</a>
+          <a href="https://github.com/Karan-Mahan/finn-copilot">Read the source</a>
+        </p>
+      </div>
+      <aside class="feature-side" aria-label="FINN Copilot in numbers">
+        <dl class="facts">
+          <div><dt>automated tests</dt><dd>34</dd></div>
+          <div><dt>primary documents indexed</dt><dd>66</dd></div>
+          <div><dt>source excerpts with page references</dt><dd>1,253</dd></div>
+          <div><dt>builds from one codebase</dt><dd>2</dd></div>
+        </dl>
+        <p class="stack-title">Built with</p>
+        <ul class="tags">
+          <li>React</li><li>TypeScript</li><li>Vite</li><li>Node 22</li><li>Cloudflare Workers</li><li>GitHub Actions</li><li>Python</li>
+        </ul>
+      </aside>
+
+      <div class="arch" id="arch" data-build="pages">
+        <div class="arch-head">
+          <h4>One codebase, two builds</h4>
+          <div class="seg" role="group" aria-label="Choose a build">
+            <button type="button" data-build-btn="pages" aria-pressed="true">GitHub Pages build</button>
+            <button type="button" data-build-btn="server" aria-pressed="false">Server edition</button>
+          </div>
+        </div>
+        <p class="arch-note" id="archNote" aria-live="polite"></p>
+        <div class="layers">
+          <div class="layer">
+            <div class="mod" data-in="pages server">
+              <code>components/copilot-app.tsx</code>
+              <p>React interface: conversations, source inspector, browser persistence, export</p>
+              <p class="who">Both builds</p><span class="visually-hidden sr-state"></span>
+            </div>
+          </div>
+          <div class="layer split">
+            <div class="mod" data-in="pages">
+              <code>web-static/</code>
+              <p>Static entry point and browser research adapter, with no server imports</p>
+              <p class="who">GitHub Pages only</p><span class="visually-hidden sr-state"></span>
+            </div>
+            <div class="mod" data-in="server">
+              <code>app/api/chat/route.ts</code>
+              <code>lib/conversation.mjs</code>
+              <p>Input validation, server-only orchestration and the server research adapter</p>
+              <p class="who">Server only</p><span class="visually-hidden sr-state"></span>
+            </div>
+          </div>
+          <div class="layer">
+            <div class="mod" data-in="pages server">
+              <code>lib/conversation-core.mjs</code>
+              <p>Shared intent routing, follow-up context, briefings, comparisons and tool dispatch</p>
+              <p class="who">Both builds</p><span class="visually-hidden sr-state"></span>
+            </div>
+          </div>
+          <div class="layer split">
+            <div class="mod" data-in="pages server">
+              <code>lib/engine.mjs</code>
+              <p>Pure filing, price, financial and evidence logic</p>
+              <p class="who">Both builds</p><span class="visually-hidden sr-state"></span>
+            </div>
+            <div class="mod" data-in="server">
+              <code>lib/research.mjs</code>
+              <p>Bounded live discovery, PDF extraction and optional Gemini synthesis</p>
+              <p class="who">Server only</p><span class="visually-hidden sr-state"></span>
+            </div>
+          </div>
+          <div class="layer">
+            <div class="mod" data-in="pages server">
+              <code>data/</code>
+              <p>Normalized snapshot and primary excerpt registry: 66 documents, 1,253 excerpts</p>
+              <p class="who">Both builds</p><span class="visually-hidden sr-state"></span>
+            </div>
+          </div>
+        </div>
+        <p class="arch-foot">Parity tests keep the two builds in step, and GitHub Actions runs all 34 tests and the type checks before each Pages deploy.</p>
+      </div>
+    </article>
+
+    <ol class="dated">
+      <li id="speech">
+        <p class="when">Aug – Nov 2025</p>
+        <div>
+          <h3>Speech to text with AI summary and denoising</h3>
+          <p class="ctx">DES646 course project, mentored by Prof. Amar Kumar Behera</p>
+          <p class="desc">Fine-tuned Whisper-small on Indian-English and Hindi–English code-mixed speech so it copes with accents and background noise. Added optional denoising, VADER sentiment, transformer summaries and SRT subtitle export, then shipped it on Hugging Face Spaces behind a Gradio interface that transcribes live microphone input.</p>
+          <p class="item-link"><a href="https://github.com/Karan-Mahan/Speech-to-Text-Model-with-AI-Summary-and-Denoising">Source on GitHub</a></p>
+        </div>
+      </li>
+      <li>
+        <p class="when">May – Jul 2025</p>
+        <div>
+          <h3>AI-driven predictive maintenance for air compressors</h3>
+          <p class="ctx">EE656 course project, mentored by Prof. Nischal Kumar Verma</p>
+          <p class="desc">Acoustic monitoring that diagnoses eight compressor faults before they cause downtime. Ranked 24 microphone positions to find the best placement, extracted 286 features per recording across time, frequency and wavelet domains, and cut them to 10–15 with mRMR, PCA and related methods. Multiclass SVMs reached over 99% accuracy with a 70% cost reduction.</p>
+          <p class="item-link"><a href="https://github.com/Tavishi-Maini/Intelligent-Condition-Based-Monitoring-Using-Acoustic-Signals">Team repository on GitHub</a></p>
+        </div>
+      </li>
+      <li>
+        <p class="when">May – Jul 2024</p>
+        <div>
+          <h3>Model Craft: ML</h3>
+          <p class="ctx">Association for Computing Activities, IIT Kanpur</p>
+          <p class="desc">Regression, classification and neural-network workflows in scikit-learn and TensorFlow, with exploratory analysis and cross-validation on large real-world datasets. Finished with an XGBoost model that sorts Spotify songs by their audio features.</p>
+          <p class="item-link"><a href="https://github.com/Karan-Mahan/Model-Craft-ML">Source on GitHub</a></p>
+        </div>
+      </li>
+    </ol>
+    <p class="more">Also on GitHub: <a href="https://github.com/Karan-Mahan/Algorithmic-Graph-Models">Algorithmic-Graph-Models</a>, written in C++.</p>
+  </section>
+
+  <!-- Experience -->
+  <section class="section wrap" id="experience" aria-labelledby="exp-title">
+    <div class="sec-head">
+      <h2 id="exp-title">Experience</h2>
+      <p>An analyst internship where I spent much of my time building tools, and a year running a student club.</p>
+    </div>
+    <ol class="dated">
+      <li>
+        <p class="when">May – Jul 2026</p>
+        <div>
+          <h3>Financial Market Analyst intern</h3>
+          <p class="ctx">Futures First Info Services</p>
+          <p class="desc">Built a macroeconomic dashboard tracking Australia’s GDP, policy rates, inflation and unemployment from 1986 to 2026, and an interactive tool (BeautifulSoup, difflib) that scrapes Reserve Bank of Australia statements and highlights each revision. Automated a Python pipeline that derives implied overnight-swap paths from rate futures, and wrote a backtesting engine for intraday spread strategies that models per-leg transaction costs.</p>
+        </div>
+      </li>
+      <li>
+        <p class="when">Jul 2024 – Apr 2025</p>
+        <div>
+          <h3>Secretary, Aeromodelling Club</h3>
+          <p class="ctx">IIT Kanpur</p>
+          <p class="desc">Ran a flight-dynamics workshop for more than 50 first-year students. Selected from over 200 applicants as the institute’s delegate at IIT Bombay’s Techfest.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Skills and education -->
+  <section class="section wrap" id="skills" aria-label="Skills and education">
+    <div class="two-col">
+      <div>
+        <h2>Skills</h2>
+        <dl class="kv">
+          <div><dt>Web</dt><dd>HTML, CSS, JavaScript, TypeScript, React, Vite, Node.js</dd></div>
+          <div><dt>Languages</dt><dd>C, C++, Python</dd></div>
+          <div><dt>Data and ML</dt><dd>NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, Keras, XGBoost</dd></div>
+          <div><dt>Tools</dt><dd>Git, GitHub Actions, Hugging Face Spaces, Gradio, MATLAB, Fusion 360, LaTeX</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <dl class="kv">
+          <div><dt>2023 – now</dt><dd>B.Tech, Mechanical Engineering, IIT Kanpur<small>CPI 8.1 / 10</small></dd></div>
+          <div><dt>2023</dt><dd>Class XII (RBSE), Matrix High School, Sikar<small>84%</small></dd></div>
+          <div><dt>2021</dt><dd>Class X (CBSE), Sanskar International School, Sikar<small>99%</small></dd></div>
+        </dl>
+        <p class="courses">Relevant courses: Fundamentals of Computing; AI, ML and Deep Learning and their applications; Introduction to Electronics; Maths and Computing using Python (ongoing).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact wrap" id="contact" aria-labelledby="contact-title">
+    <div class="sec-head">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email reaches me fastest. I’m happy to walk through any of this code in an interview.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="big-mail"><a href="mailto:karansingh23@iitk.ac.in">karansingh23@iitk.ac.in</a></p>
+        <div class="copy-row">
+          <button class="btn-quiet" id="copyEmail" type="button">Copy email</button>
+          <span id="copyStatus" role="status"></span>
+        </div>
+      </div>
+      <ul class="elsewhere">
+        <li><a href="https://github.com/Karan-Mahan">GitHub</a><span>Karan-Mahan</span></li>
+        <li><a href="https://www.linkedin.com/in/karan-singh-222436295/">LinkedIn</a><span>Karan Singh</span></li>
+        <li><a href="https://karan-mahan.github.io/finn-copilot/">FINN Copilot</a><span>Live app</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap" id="footNote">Hand-written HTML, CSS and JavaScript in one file of about 21 KB compressed, with no framework, build step or image files. Updated November 2026.</div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+  const root = document.documentElement;
+
+  /* ---------------- Theme ---------------- */
+  const themeBtn = $("themeToggle");
+  const darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  const activeTheme = () => root.getAttribute("data-theme") || (darkQuery && darkQuery.matches ? "dark" : "light");
+  const syncThemeButton = () => {
+    const dark = activeTheme() === "dark";
+    themeBtn.dataset.mode = dark ? "dark" : "light";
+    themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  };
+  themeBtn.addEventListener("click", () => {
+    const next = activeTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("ks-theme", next); } catch (e) { /* storage blocked: the choice lasts for this visit */ }
+    syncThemeButton();
+  });
+  if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener("change", syncThemeButton);
+  syncThemeButton();
+
+  /* ---------------- A minimal Redux-style store ---------------- */
+  function createStore(reducer, preloadedState) {
+    let state = preloadedState;
+    const listeners = new Set();
+    return {
+      getState: () => state,
+      dispatch(action) {
+        const next = reducer(state, action);
+        if (next !== state) {
+          state = next;
+          listeners.forEach((listener) => listener(state, action));
+        }
+        return action;
+      },
+      subscribe(listener) {
+        listeners.add(listener);
+        return () => listeners.delete(listener);
+      },
+    };
+  }
+
+  // Higher-order reducer: records a timeline of states so the inspector can undo, redo and jump.
+  const HISTORY_LIMIT = 40;
+  const COALESCED = new Set(["draft/engravingChanged"]); // typing a word is one step, not one per key
+  function withHistory(reducer) {
+    return (history, action) => {
+      const { timeline, cursor } = history;
+      switch (action.type) {
+        case "history/undo":
+          return cursor > 0 ? { timeline, cursor: cursor - 1 } : history;
+        case "history/redo":
+          return cursor < timeline.length - 1 ? { timeline, cursor: cursor + 1 } : history;
+        case "history/jumped": {
+          const to = Math.max(0, Math.min(timeline.length - 1, action.payload));
+          return to === cursor ? history : { timeline, cursor: to };
+        }
+        default: {
+          const present = timeline[cursor].state;
+          const next = reducer(present, action);
+          if (next === present) return history;
+          let kept = timeline.slice(0, cursor + 1); // a new action discards the undone future
+          const last = kept[kept.length - 1];
+          if (COALESCED.has(action.type) && last.action.type === action.type) {
+            kept[kept.length - 1] = { action, state: next };
+          } else {
+            kept.push({ action, state: next });
+          }
+          if (kept.length > HISTORY_LIMIT) kept = kept.slice(-HISTORY_LIMIT);
+          return { timeline: kept, cursor: kept.length - 1 };
+        }
+      }
+    };
+  }
+
+  /* ---------------- Catalogue (sample prices for the demo) ---------------- */
+  const METALS = {
+    yg: { label: "18K yellow gold", ratePerGram: 9600, weightFactor: 1, making: 0.14, stops: ["#7d5a1c", "#f1d27a", "#b88a2e"] },
+    rg: { label: "18K rose gold", ratePerGram: 9600, weightFactor: 1, making: 0.14, stops: ["#8e5547", "#f3c3b3", "#c48a7b"] },
+    pt: { label: "Platinum 950", ratePerGram: 5200, weightFactor: 1.36, making: 0.2, stops: ["#7a8089", "#f5f7fa", "#adb3bc"] },
+  };
+  const STONES = {
+    "0.25": { price: 26000, scale: 0.8 },
+    "0.50": { price: 64000, scale: 1 },
+    "0.75": { price: 112000, scale: 1.16 },
+  };
+  const SIZES = Array.from({ length: 15 }, (_, i) => i + 8); // Indian ring sizes 8–22
+  const GST = 0.03;
+  const ENGRAVING_FEE = 500;
+  const ENGRAVING_MAX = 14;
+  const MAX_QTY = 5;
+  const PRODUCT_NAME = "Facet solitaire ring";
+
+  const defaultState = {
+    draft: { metal: "yg", carat: "0.50", size: 14, engraving: "" },
+    bag: [],
+    wishlisted: false,
+  };
+
+  const lineKey = (cfg) => [cfg.metal, cfg.carat, cfg.size, cfg.engraving.trim()].join("|");
+  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+
+  /* ---------------- Reducer ---------------- */
+  function ringReducer(state, action) {
+    const withDraft = (patch) => ({ ...state, draft: { ...state.draft, ...patch } });
+    switch (action.type) {
+      case "draft/metalSelected": return withDraft({ metal: action.payload });
+      case "draft/stoneSelected": return withDraft({ carat: action.payload });
+      case "draft/sizeSelected": return withDraft({ size: action.payload });
+      case "draft/engravingChanged": return withDraft({ engraving: action.payload });
+      case "bag/itemAdded": {
+        const key = lineKey(state.draft);
+        const existing = state.bag.find((line) => line.key === key);
+        if (existing && existing.qty >= MAX_QTY) return state;
+        const bag = existing
+          ? state.bag.map((line) => (line.key === key ? { ...line, qty: line.qty + 1 } : line))
+          : [...state.bag, { ...state.draft, engraving: state.draft.engraving.trim(), key, qty: 1 }];
+        return { ...state, bag };
+      }
+      case "bag/quantityChanged": {
+        const { key, delta } = action.payload;
+        const line = state.bag.find((l) => l.key === key);
+        if (!line || clamp(line.qty + delta, 1, MAX_QTY) === line.qty) return state;
+        return { ...state, bag: state.bag.map((l) => (l.key === key ? { ...l, qty: l.qty + delta } : l)) };
+      }
+      case "bag/itemRemoved":
+        return { ...state, bag: state.bag.filter((line) => line.key !== action.payload) };
+      case "wishlist/toggled":
+        return { ...state, wishlisted: !state.wishlisted };
+      default:
+        return state;
+    }
+  }
+
+  /* ---------------- Selectors: prices are derived, never stored ---------------- */
+  function priceOf(cfg) {
+    const metal = METALS[cfg.metal];
+    const weight = (2.4 + (cfg.size - 12) * 0.07) * metal.weightFactor; // grams
+    const metalCost = weight * metal.ratePerGram;
+    const making = metalCost * metal.making;
+    const stone = STONES[cfg.carat].price;
+    const engraving = cfg.engraving.trim() ? ENGRAVING_FEE : 0;
+    const subtotal = metalCost + making + stone + engraving;
+    const gst = subtotal * GST;
+    return { weight, metal: metalCost, making, stone, engraving, gst, total: subtotal + gst };
+  }
+  const unitPrice = (cfg) => Math.round(priceOf(cfg).total);
+  const bagCount = (state) => state.bag.reduce((n, line) => n + line.qty, 0);
+  const bagTotal = (state) => state.bag.reduce((sum, line) => sum + unitPrice(line) * line.qty, 0);
+
+  /* ---------------- Persistence (one viewer's browser only) ---------------- */
+  const STORAGE_KEY = "ks-ring-demo-v1";
+  const validConfig = (c) =>
+    c && METALS[c.metal] && STONES[c.carat] && SIZES.includes(c.size) &&
+    typeof c.engraving === "string" && c.engraving.length <= ENGRAVING_MAX;
+  function loadSaved() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+      if (!saved || !validConfig(saved.draft) || !Array.isArray(saved.bag)) return null;
+      const bag = saved.bag
+        .filter((l) => validConfig(l) && Number.isInteger(l.qty) && l.qty >= 1 && l.qty <= MAX_QTY)
+        .map((l) => ({ metal: l.metal, carat: l.carat, size: l.size, engraving: l.engraving.trim(), key: lineKey(l), qty: l.qty }));
+      const d = saved.draft;
+      return { draft: { metal: d.metal, carat: d.carat, size: d.size, engraving: d.engraving }, bag, wishlisted: saved.wishlisted === true };
+    } catch (e) {
+      return null;
+    }
+  }
+  function save(state) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* storage blocked: the demo still works */ }
+  }
+
+  const store = createStore(withHistory(ringReducer), {
+    timeline: [{ action: { type: "@@init" }, state: loadSaved() || defaultState }],
+    cursor: 0,
+  });
+  const present = () => {
+    const h = store.getState();
+    return h.timeline[h.cursor].state;
+  };
+
+  /* ---------------- DOM helpers ---------------- */
+  const inrFormat = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
+  const inr = (n) => inrFormat.format(Math.round(n));
+  const el = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  };
+  const describe = (cfg) => `${METALS[cfg.metal].label}, ${cfg.carat} ct, size ${cfg.size}`;
+
+  const cardTitle = $("cardTitle");
+  const bagToggle = $("bagToggle");
+  const configureView = $("configureView");
+  const bagView = $("bagView");
+  const sizeSelect = $("size");
+  const engraveInput = $("engraving");
+  const statusEl = $("status");
+  const bagStatus = $("bagStatus");
+  const metalInputs = document.querySelectorAll('input[name="metal"]');
+  const caratInputs = document.querySelectorAll('input[name="carat"]');
+  const stops = ["m0", "m1", "m2"].map($);
+  const glint = $("glint");
+
+  SIZES.forEach((n) => {
+    const option = el("option", "", `Size ${n}`);
+    option.value = String(n);
+    sizeSelect.append(option);
+  });
+
+  /* ---------------- Events -> actions ---------------- */
+  const changeDraft = (type, payload) => {
+    statusEl.textContent = "";
+    store.dispatch({ type, payload });
+  };
+  metalInputs.forEach((input) => input.addEventListener("change", () => changeDraft("draft/metalSelected", input.value)));
+  caratInputs.forEach((input) => input.addEventListener("change", () => changeDraft("draft/stoneSelected", input.value)));
+  sizeSelect.addEventListener("change", () => changeDraft("draft/sizeSelected", Number(sizeSelect.value)));
+  engraveInput.addEventListener("input", () => {
+    const clean = engraveInput.value.replace(/[^\p{L}\p{N} &.'-]/gu, "").slice(0, ENGRAVING_MAX);
+    if (clean !== engraveInput.value) engraveInput.value = clean;
+    changeDraft("draft/engravingChanged", clean);
+  });
+
+  $("addToBag").addEventListener("click", () => {
+    const before = bagCount(present());
+    store.dispatch({ type: "bag/itemAdded" });
+    const after = bagCount(present());
+    statusEl.textContent = after > before
+      ? `Added to bag. ${after} ${after === 1 ? "item" : "items"} in your bag.`
+      : `You can add up to ${MAX_QTY} of the same ring.`;
+  });
+  $("wishlist").addEventListener("click", () => {
+    store.dispatch({ type: "wishlist/toggled" });
+    statusEl.textContent = present().wishlisted ? "Saved to wishlist." : "Removed from wishlist.";
+  });
+
+  // Card views: configure the ring, or review the bag.
+  let view = "configure";
+  function setView(next) {
+    view = next;
+    configureView.hidden = next !== "configure";
+    bagView.hidden = next !== "bag";
+    bagToggle.setAttribute("aria-expanded", String(next === "bag"));
+    bagStatus.textContent = "";
+    renderHeader(present());
+    if (next === "bag") cardTitle.focus();
+    else bagToggle.focus();
+  }
+  bagToggle.addEventListener("click", () => setView(view === "bag" ? "configure" : "bag"));
+  $("backToRing").addEventListener("click", () => setView("configure"));
+  $("checkout").addEventListener("click", () => {
+    bagStatus.textContent = "This is a demo, so checkout stops here. Your bag stays saved in this browser.";
+  });
+
+  $("bagList").addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-act]");
+    if (!button) return;
+    const { act, key } = button.dataset;
+    if (act === "remove") {
+      store.dispatch({ type: "bag/itemRemoved", payload: key });
+      bagStatus.textContent = "Removed from bag.";
+      cardTitle.focus();
+      return;
+    }
+    store.dispatch({ type: "bag/quantityChanged", payload: { key, delta: act === "inc" ? 1 : -1 } });
+    // The list re-renders, so put focus back on the matching button (or its sibling if it is now disabled).
+    const list = $("bagList");
+    const same = list.querySelector(`button[data-act="${act}"][data-key="${CSS.escape(key)}"]`);
+    const other = list.querySelector(`button[data-act="${act === "inc" ? "dec" : "inc"}"][data-key="${CSS.escape(key)}"]`);
+    (same && !same.disabled ? same : other)?.focus();
+  });
+
+  /* ---------------- Rendering from state ---------------- */
+  function renderHeader(state) {
+    const count = bagCount(state);
+    cardTitle.textContent = view === "bag" ? "Your bag" : PRODUCT_NAME;
+    if (view === "bag") {
+      bagToggle.textContent = "Back to ring";
+      bagToggle.removeAttribute("aria-label");
+    } else {
+      bagToggle.replaceChildren("Bag ", el("strong", "", String(count)));
+      bagToggle.setAttribute("aria-label", `Bag, ${count} ${count === 1 ? "item" : "items"}`);
+    }
+  }
+
+  function replayGlint() {
+    glint.classList.remove("play", "first");
+    void glint.getBoundingClientRect(); // restart the CSS animation
+    glint.classList.add("play");
+  }
+
+  function renderConfigure(state, previous) {
+    const d = state.draft;
+    const metal = METALS[d.metal];
+    const p = priceOf(d);
+    const words = d.engraving.trim();
+
+    $("price").textContent = inr(p.total);
+    $("priceNote").textContent = `Incl. 3% GST, ${p.weight.toFixed(2)} g metal`;
+    $("metalName").textContent = `(${metal.label})`;
+    metalInputs.forEach((input) => { input.checked = input.value === d.metal; });
+    caratInputs.forEach((input) => { input.checked = input.value === d.carat; });
+    sizeSelect.value = String(d.size);
+    if (engraveInput.value !== d.engraving) engraveInput.value = d.engraving;
+    $("engraveCount").textContent = `${d.engraving.length}/${ENGRAVING_MAX}`;
+
+    stops.forEach((stop, i) => { stop.style.stopColor = metal.stops[i]; });
+    $("stoneScale").style.transform = `scale(${STONES[d.carat].scale})`;
+    $("engraveTP").textContent = words;
+    $("engraveText").style.fill = metal.stops[0];
+    $("ringTitle").textContent = `Preview: ${metal.label} ring with a ${d.carat} ct diamond${words ? `, engraved “${words}”` : ""}`;
+    if (previous && previous.draft.carat !== d.carat) replayGlint();
+
+    const wish = $("wishlist");
+    wish.setAttribute("aria-pressed", String(state.wishlisted));
+    wish.setAttribute("aria-label", state.wishlisted ? "Remove from wishlist" : "Save to wishlist");
+
+    const rows = [
+      [`Metal, ${metal.label}`, p.metal],
+      ["Making charges", p.making],
+      [`Diamond, ${d.carat} ct`, p.stone],
+      ...(p.engraving ? [["Engraving", p.engraving]] : []),
+      ["GST (3%)", p.gst],
+    ];
+    const body = $("breakdownBody");
+    body.replaceChildren(
+      ...rows.map(([label, value]) => {
+        const tr = el("tr");
+        tr.append(el("td", "", label), el("td", "", inr(value)));
+        return tr;
+      }),
+    );
+    const total = el("tr", "total");
+    total.append(el("td", "", "Total"), el("td", "", inr(p.total)));
+    body.append(total);
+  }
+
+  function renderBag(state) {
+    const list = $("bagList");
+    const empty = state.bag.length === 0;
+    $("bagEmpty").hidden = !empty;
+    $("bagSum").hidden = empty;
+    list.replaceChildren(
+      ...state.bag.map((line) => {
+        const li = el("li", "bag-item");
+        const thumb = el("span", `bag-thumb ${line.metal}`);
+        thumb.setAttribute("aria-hidden", "true");
+        const info = el("div", "bag-info");
+        info.append(el("p", "bag-name", PRODUCT_NAME), el("p", "bag-meta", describe(line)));
+        if (line.engraving) info.append(el("p", "bag-engr", `Engraved “${line.engraving}”`));
+        const price = el("p", "bag-price", inr(unitPrice(line) * line.qty));
+
+        const qty = el("div", "qty");
+        qty.setAttribute("role", "group");
+        qty.setAttribute("aria-label", `Quantity for ${describe(line)}`);
+        const makeStep = (act, label, aria, disabled) => {
+          const b = el("button", "", label);
+          b.type = "button";
+          b.dataset.act = act;
+          b.dataset.key = line.key;
+          b.disabled = disabled;
+          b.setAttribute("aria-label", aria);
+          return b;
+        };
+        qty.append(
+          makeStep("dec", "−", "Decrease quantity", line.qty <= 1),
+          el("output", "", String(line.qty)),
+          makeStep("inc", "+", "Increase quantity", line.qty >= MAX_QTY),
+        );
+        const remove = el("button", "link-btn", "Remove");
+        remove.type = "button";
+        remove.dataset.act = "remove";
+        remove.dataset.key = line.key;
+        remove.setAttribute("aria-label", `Remove ${describe(line)}`);
+        const controls = el("div", "bag-controls");
+        controls.append(qty, remove);
+
+        li.append(thumb, info, price, controls);
+        return li;
+      }),
+    );
+    $("bagTotal").textContent = inr(bagTotal(state));
+  }
+
+  const formatAction = (action) =>
+    action.payload === undefined ? `{ type: ${action.type} }` : `{ type: ${action.type}, payload: ${JSON.stringify(action.payload)} }`;
+
+  function renderInspector(history) {
+    const { timeline, cursor } = history;
+    const step = timeline[cursor];
+    const label = `Step ${cursor + 1} of ${timeline.length}: ${step.action.type}`;
+    $("undoBtn").disabled = cursor === 0;
+    $("redoBtn").disabled = cursor === timeline.length - 1;
+    const travel = $("travel");
+    travel.max = String(timeline.length - 1);
+    travel.value = String(cursor);
+    travel.setAttribute("aria-valuetext", label);
+    $("logStep").textContent = label;
+    $("stateOut").textContent = JSON.stringify(step.state, (k, v) => (k === "key" ? undefined : v), 2);
+
+    const items = [];
+    for (let i = timeline.length - 1; i >= 0; i--) {
+      const b = el("button", i > cursor ? "future" : "");
+      b.type = "button";
+      b.dataset.index = String(i);
+      if (i === cursor) b.setAttribute("aria-current", "step");
+      const action = timeline[i].action;
+      b.append(`${i + 1}. { type: `, el("span", "t", action.type));
+      b.append(action.payload === undefined ? " }" : `, payload: ${JSON.stringify(action.payload)} }`);
+      if (i > cursor) b.append(" (undone)");
+      const li = el("li");
+      li.append(b);
+      items.push(li);
+    }
+    $("steps").replaceChildren(...items);
+  }
+
+  $("undoBtn").addEventListener("click", () => store.dispatch({ type: "history/undo" }));
+  $("redoBtn").addEventListener("click", () => store.dispatch({ type: "history/redo" }));
+  $("travel").addEventListener("input", (e) => store.dispatch({ type: "history/jumped", payload: Number(e.target.value) }));
+  $("steps").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-index]");
+    if (b) store.dispatch({ type: "history/jumped", payload: Number(b.dataset.index) });
+  });
+
+  const logToggle = $("logToggle");
+  logToggle.addEventListener("click", () => {
+    const log = $("log");
+    const opening = log.hidden;
+    log.hidden = !opening;
+    logToggle.setAttribute("aria-expanded", String(opening));
+    logToggle.textContent = opening ? "Close the store" : "Open the store";
+  });
+
+  function bumpBagCount() {
+    const count = bagToggle.querySelector("strong");
+    if (!count) return;
+    count.classList.remove("bump");
+    void count.offsetWidth;
+    count.classList.add("bump");
+  }
+
+  let previous = present();
+  store.subscribe((history) => {
+    const state = history.timeline[history.cursor].state;
+    renderHeader(state);
+    renderConfigure(state, previous);
+    renderBag(state);
+    renderInspector(history);
+    if (bagCount(state) > bagCount(previous)) bumpBagCount();
+    save(state);
+    previous = state;
+  });
+  renderHeader(previous);
+  renderConfigure(previous, null);
+  renderBag(previous);
+  renderInspector(store.getState());
+
+  /* ---------------- FINN Copilot architecture explorer ---------------- */
+  const arch = $("arch");
+  const BUILD_NOTES = {
+    pages: "Runs entirely in the visitor’s browser, with no API server and no model keys. Conversations stay on the visitor’s device.",
+    server: "Adds a validated chat API, live discovery for companies outside the bundled data, and optional Gemini synthesis.",
+  };
+  function setBuild(build) {
+    arch.dataset.build = build;
+    arch.querySelectorAll("[data-build-btn]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.buildBtn === build)));
+    $("archNote").textContent = BUILD_NOTES[build];
+    arch.querySelectorAll(".mod").forEach((mod) => {
+      const used = mod.dataset.in.split(" ").includes(build);
+      mod.querySelector(".sr-state").textContent = used ? "Used in this build." : "Not used in this build.";
+    });
+  }
+  arch.querySelectorAll("[data-build-btn]").forEach((b) => b.addEventListener("click", () => setBuild(b.dataset.buildBtn)));
+  setBuild("pages");
+
+  /* ---------------- Current section in the header ---------------- */
+  const navLinks = Array.from(document.querySelectorAll(".top nav a"));
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((a) => {
+          if (a.hash === `#${entry.target.id}`) a.setAttribute("aria-current", "location");
+          else a.removeAttribute("aria-current");
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["intro", "why", "fit", "projects", "experience", "skills", "contact"].forEach((id) => {
+      const section = $(id);
+      if (section) observer.observe(section);
+    });
+  }
+
+  /* ---------------- Copy email ---------------- */
+  $("copyEmail").addEventListener("click", () => {
+    const out = $("copyStatus");
+    const fail = () => { out.textContent = "Copy isn’t available here. Select the address instead."; };
+    try {
+      navigator.clipboard.writeText("karansingh23@iitk.ac.in").then(() => { out.textContent = "Copied."; }, fail);
+    } catch (e) {
+      fail();
+    }
+  });
+})();
+</script>
+</body>
+</html>
